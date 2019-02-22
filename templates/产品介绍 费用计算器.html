@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>阳光成单</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobiscroll.2.13.2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/LArea.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/mobiscroll.2.13.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var curr = new Date().getFullYear();
+            var opt = {  
+				'default': {
+					theme: 'default',
+					mode: 'scroller',
+					display: 'modal',
+					animate: 'fade'
+                },
+				
+                'select': {
+                    preset: 'select'
+                },
+             
+            }
+
+            $('.demo-test-select').scroller($.extend(opt['select'],opt['default']));
+			$('.demo-test-selects').scroller($.extend(opt['select'],opt['default']));			
+        });
+    </script>
+    </head>
+    <body>
+<header id="title">
+      <div class="back"> </div>
+      算算客户借款费用 </header>
+<div style="height:40px;"></div>
+<div class="pay-iphone">填写借款人的申请信息，可算出客户费用是多少</div>
+<ul class="product_sq">
+      <li> <span>小区所在城市</span>
+    <input id="demo1" type="text" class="add-input" readonly placeholder="请选择小区所在区域" >
+    <input id="value1"  type="hidden" value="20,234,504">
+    <i class="am-icon-angle-right"></i> </li>
+      <li> <span>申请借款金额</span>
+    <input type="text" class="add-input" placeholder="请输入10以上的数字">
+    <i class="am-text-right">万元</i> </li>
+      <li> <span>申请借款期限</span>
+    <div data-role="fieldcontain" class="demo-select add-input">
+            <select id="city" class="demo-test-select" data-role="none">
+            <option value="0">请选择申请借款期限</option>
+                <option value="1">一个月</option>
+                <option value="2">两个月</option>
+                <option value="3">三个月</option>
+                <option value="4">四个月</option>
+                <option value="5">五个月</option>
+                <option value="6">六个月</option>
+                <option value="7">七个月</option>
+                <option value="8">八个月</option>
+            </select>
+        </div>
+    <i class="am-icon-angle-right"></i> </li>
+      <li style="border:0px;"> <span>抵押类型</span>
+    <div data-role="fieldcontain" class="demo-selects add-input">
+            <select id="citys" class="demo-test-selects" data-role="none">
+            <option value="0">请选择抵押类型</option>
+                <option value="1">房产证号</option>
+                <option value="2">不动产权证号</option>
+                <option value="3">其他</option>
+            </select>
+        </div>
+    <i class="am-icon-angle-right"></i> </li>
+    </ul>
+<div class="clear"></div>
+<p class="product_tips">本单建议返佣比例为<font color="#ff711c">0.00%</font>，可设置您预期的比例，范围在 <font color="#ff711c">0.00%-0.00%</font>。根据您目前设置的比例，借款人的综合成
+      本为年化<font color="#ff711c">0.00%</font>。</p>
+<ul class="product_sq" style="margin-top:10px;">
+      <li style="border:0px;"> <span>返佣比例&nbsp;<img src="images/yjicon.png" width="14" id="fy_windows"></span>
+    <div class="list-cart1">
+          <div class="d-stock"> <a class="decrease">-</a>
+        <input id="num" readonly class="text_box" name="" type="text" value="0.00%">
+        <a class="increase">+</a> </div>
+        </div>
+  </li>
+    </ul>
+<input type="button" class="confirm" value="计算">
+<p class="product_tips">温馨提示：<br>
+      1.填写借款人的借款意向，即可算出借款人需要付出的费用。<br>
+      2.本计算结果只提供大概数据，具体会根据借款人房产及征信
+      情况而定。 </p>
+<script src="js/LAreaData1.js"></script> 
+<script src="js/LAreaData2.js"></script> 
+<script src="js/LArea.js"></script> 
+<script>
+var area1 = new LArea();
+area1.init({
+	'trigger': '#demo1', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+	'valueTo': '#value1', //选择完毕后id属性输出到该位置
+	'keys': {
+		id: 'id',
+		name: 'name'
+	}, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+	'type': 1, //数据源类型
+	'data': LAreaData //数据源
+});
+area1.value=[1,13,3];//控制初始位置，注意：该方法并不会影响到input的value
+var area2 = new LArea();
+area2.init({
+	'trigger': '#demo2',
+	'valueTo': '#value2',
+	'keys': {
+		id: 'value',
+		name: 'text'
+	},
+	'type': 2,
+	'data': [provs_data, citys_data, dists_data]
+});
+</script> 
+<script>
+	//购物数量加减
+	$(function(){
+		$('.increase').click(function(){
+			var self = $(this);
+			var current_num = parseInt(self.siblings('input').val());
+			current_num += 1;
+			self.siblings('input').val(current_num);
+			update_item(self.siblings('input').data('item-id'));
+		})		
+		$('.decrease').click(function(){
+			var self = $(this);
+			var current_num = parseInt(self.siblings('input').val());
+			if(current_num > 1){
+				current_num -= 1;
+				self.siblings('input').val(current_num);
+				update_item(self.siblings('input').data('item-id'));
+			}
+		})
+	})
+</script> 
+<!-- 弹出层部分-->
+<div class="ygydcity_layer">
+      <div class="ygydcity">
+    <div class="ygydcontent">
+          <ul class="payment_city_mask">
+        <li class="ygyd_title">返佣比例说明</li>
+        <li class="ygyd_con">您的返佣比例与借款人的借款期限有关，
+              详见产品介绍页面说明</li>
+        <li class="shiyi_close">知道了</li>
+      </ul>
+        </div>
+  </div>
+      <div class="ygydcontent_mark"></div>
+    </div>
+<script>
+$(function(){
+	$("#fy_windows").click(function () {
+		$('.ygydcity').show(0);
+		$('.ygydcontent_mark').show(0);
+	});
+	$('.shiyi_close').click(function(){
+		$('.ygydcity').hide(0);
+		$('.ygydcontent_mark').hide(0);
+	});
+});
+</script>
+</body>
+</html>

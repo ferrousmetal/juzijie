@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>阳光成单</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="stylesheet" type="text/css" href="css/global.css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+  <header id="title">
+    <div class="back"> </div>
+    订单
+    <div class="order_sm">订单说明</div>
+  </header>
+  <div style="height:40px;"></div>
+  <!--订单状态-->
+  <div class="state_box">
+    <div class="state border-right">进行中</div>
+    <div class="state border-right">已成交</div>
+    <div class="state">已终止</div>
+    <div class="blue_block"></div>
+    <div class=" border_bottom"></div>
+  </div>
+  <!--订单信息-->
+  <div class="move_box"> <img src="images/order-none.fw.png">
+    <p>还没有订单哦，马上去提单吧~</p>
+    <button>立即提单</button>
+  </div>
+  <div style="height:5.3rem;"></div>
+  <ul class="quanbu-ul1">
+    <li class="current">
+      <div class="qu-tu1"> <a href="#" class="atu1"><img src="images/sjsc-02.png"></a> <a href="#" class="atu2"><img src="images/sjsc-15-1.png"></a> </div>
+      <a href="#" class="qu-ul1a">首页</a> </li>
+    <li>
+      <div class="qu-tu1"> <a href="#" class="atu1"><img src="images/sjsc-17.png"></a> <a href="#" class="atu2"><img src="images/sjsc-17-1.png"></a> </div>
+      <a href="#" class="qu-ul1a">订单</a> </li>
+    <li>
+      <div class="qu-tu1"> <a href="#" class="atu1"><img src="images/sjsc-18.png"></a> <a href="#" class="atu2"><img src="images/sjsc18-1.png"></a> </div>
+      <a href="#" class="qu-ul1a">我的</a> </li>
+    <div style="clear:both;"></div>
+  </ul>
+  <script>
+$(".state:eq(0)").click(
+	function(){
+		$(".blue_block").animate({left:'0%'})
+		
+		}
+)
+$(".state:eq(1)").click(
+	function(){
+		$(".blue_block").animate({left:'33%'})
+		
+		}
+)
+$(".state:eq(2)").click(
+	function(){
+		$(".blue_block").animate({left:'67%'})
+		
+		}
+)
+
+</script> 
+</body>
+</html>

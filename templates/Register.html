@@ -1,0 +1,81 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>阳光成单</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}"/>
+</head>
+<body style="background:#fff;">
+<div>
+    <form id="formRegister" action="">
+        <link href="{% static 'css/register.css' %}" rel="stylesheet" type="text/css"/>
+        <header id="title">
+            <div class="back"></div>
+            个人注册
+        </header>
+        <div style="height:2.8em;"></div>
+        <section id="register">
+            <div><span> <img src="{% static 'images/icon_phone.png' %}" width="24" height="24" alt="手机图标"></span>
+                <input
+
+                        id="txt_UserNmae" name="txt_UserName" type="text" placeholder="手机号码">
+            </div>
+            <div><span> <img src="{% static 'images/icon_password.png' %}" width="24" height="24" alt="密码图标"></span>
+                <input
+
+                        id="txt_Pwd" name="txt_Pwd" type="password" placeholder="密码（6～16个字符）">
+            </div>
+            <div><span> <img src="{% static 'images/icon_password.png' %}" width="24" height="24" alt="密码图标"></span>
+                <input
+
+                        id="txt_PwdTwo" name="txt_PwdTwo" type="password" placeholder="再次输入密码">
+            </div>
+            <div><span> <img src="{% static 'images/icon_email.png' %}" width="24" height="24" alt="手机验证码"></span>
+                <input
+
+                        id="txt_UserNmae" name="txt_UserName" type="text" placeholder="手机验证码"><a href="#">获取验证码</a>
+                <!--<a href="#" class="fasong">(60)重新发送</a>-->
+            </div>
+            <input type="hidden" id="hid_Action" name="hid_Action" value="add"/>
+            <a id="asubmit" class="btn">立即注册</a>
+            <p> 已有账号？<a href="#">马上登陆</a></p>
+        </section>
+    </form>
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        var button = document.getElementsByTagName("a")[0];
+        button.innerText = "获取验证码";
+        var timer = null;
+        button.onclick = function abc() {
+            button.onclick=null;
+            clearInterval(timer);//这句话至关重要
+            var time = 6;
+            var that = this;//习惯
+            timer = setInterval(function () {
+                console.log(time);
+                if (time <= 0) {
+                    button.onclick=abc;
+                    that.innerText = "";
+                    that.innerText = "点击重新发送";
+                    that.disabled = false;
+
+                } else {
+                    that.disabled = true;
+                    that.innerText = "";
+                    that.innerText = "剩余时间" + (time) + "秒";
+                    time--;
+                }
+            }, 1000);
+        }
+    }
+</script>
+</body>
+</html>

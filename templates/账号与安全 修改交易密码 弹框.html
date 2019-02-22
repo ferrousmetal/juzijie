@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>阳光成单</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="stylesheet" type="text/css" href="css/global.css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+  <header id="title">
+    <div class="back"> </div>
+    修改交易密码
+  </header>
+  <div style="height:40px;"></div>
+  <!--设置密码-->
+  <div class="pay-iphone">请先输入旧密码进行验证</div>
+  <ul class="payment">
+	    	<li><input type="text" size="1" maxlength="1" onkeyup='this.value=this.value.replace(/\D/gi,"")'></li>
+	    	<li><input type="text"></li>
+	    	<li><input type="text"></li>
+	    	<li><input type="text"></li>
+	    	<li><input type="text"></li>
+	    	<li><input type="text"></li>
+	    </ul>
+        <p class="forget_kf">忘记密码？<a href="#"id="fy_windows">联系客服</a></p>
+<input type="button" class="confirm" value="下一步">
+ <!-- 弹出层部分-->
+<div class="ygydcity_layer">
+<div class="ygydcity">
+ <div class="ygydcontent">
+
+				<ul class="payment_city_mask">
+                    <li class="ygyd_con" style="padding:30px 10px; font-weight:bold; font-size:18px; color:#000;">400-010-0788</li>
+					<li class="shiyi_close">知道了</li>
+				</ul>
+				
+</div>								
+</div>
+<div class="ygydcontent_mark"></div>
+</div>				
+<script>
+$(function(){
+	$("#fy_windows").click(function () {
+		$('.ygydcity').show(0);
+		$('.ygydcontent_mark').show(0);
+	});
+	$('.shiyi_close').click(function(){
+		$('.ygydcity').hide(0);
+		$('.ygydcontent_mark').hide(0);
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>阳光成单</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="stylesheet" type="text/css" href="css/global.css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+  <header id="title">
+    <div class="back"> </div>
+    投诉
+  </header>
+  <div style="height:2.8em;"></div>
+  <!--投诉表单-->
+  <p class="say_more">在本次服务过程中我们有哪些做的不完善的地方？欢迎吐槽，吐完就爽啦~</p> 
+  <div class="evaluate_form"><textarea placeholder="请写下您宝贵意见或建议" id="input_4" name="input_4" placeholder="限25字" maxlength="200" class="evaluate"></textarea><span class="un"><font id="xxxx">200</font>/200</span></div>
+ <input type="button" class="confirm" value="提交">
+ <script type="text/javascript">  
+$('textarea').each(function() {  
+var ta = $(this), p = ta.parent(), ml = parseInt(ta.attr('maxlength')),  
+v = ta.val(), h = ta.attr('placeholder');  
+if (v == h) v = '';  
+if (h && ml) {  
+p.css({'position': 'relative'});  
+//ta.before(sp);  
+ta.bind('click keyup', function() {  
+var m = $(this), v1 = m.val();  
+if (v1.length > ml) {  
+m.val(v1.substring(0, ml))  
+}  
+$("#xxxx").text(ml-m.val().length);  
+});  
+}  
+});  
+</script>
+ 
+</body>
+</html>

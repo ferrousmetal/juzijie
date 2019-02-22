@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>阳光成单</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="stylesheet" type="text/css" href="css/global.css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/mobiscroll.2.13.2.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/LArea.css">
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/mobiscroll.2.13.2.js"></script>
+<script type="text/javascript">
+        $(function () {
+            var curr = new Date().getFullYear();
+            var opt = {  
+				'default': {
+					theme: 'default',
+					mode: 'scroller',
+					display: 'modal',
+					animate: 'fade'
+                },
+				
+                'select': {
+                    preset: 'select'
+                },
+             
+            }
+
+            $('.demo-test-select').scroller($.extend(opt['select'],opt['default']));
+			$('.demo-test-selects').scroller($.extend(opt['select'],opt['default']));				
+        });
+    </script>   
+</head>
+<body>
+  <header id="title">
+    <div class="back"> </div>
+    产品申请
+  </header>
+  <div style="height:40px;"></div>
+  <div class="product_step"><span class="step_one">2/3</span><h2>填写借款人资产信息</h2></div>
+<ul class="product_sq">
+	    	<li>
+	    		<span>小区所在区域</span>
+                <input id="demo1" type="text" class="add-input" readonly placeholder="请选择小区所在区域" >
+		<input id="value1"  type="hidden" value="20,234,504">
+        <i class="am-icon-angle-right"></i>
+	    	</li>
+	    	<li>
+	    		<span>小区名</span>
+	    		<input type="text" class="add-input" placeholder="请输入小区名称">
+	    	</li>
+            <li>
+	    		<span>楼栋号</span>
+	    		<input type="text" class="add-input" placeholder="请输入楼栋号">
+	    	</li>
+            <li>
+	    		<span>楼层</span>
+	    		<input type="text" class="add-input" placeholder="请输入层号">
+	    	</li>
+            <li>
+	    		<span>门牌号</span>
+	    		<input type="text" class="add-input" placeholder="请输入门牌号">
+	    	</li>
+            <li>
+	    		<span>房屋面积</span>
+	    		<input type="text" class="add-input" placeholder="请输门房屋面积"><i class="am-text-right">平方米</i>
+	    	</li>
+            <li>
+	    		<span>产权证类型&nbsp;<img src="images/yjicon.png" width="14" id="cq_windows"></span>
+	    		<div data-role="fieldcontain" class="demo-selects add-input">
+            <select id="citys" class="demo-test-selects" data-role="none">
+            <option value="0">请选择产权证类型</option>
+                <option value="1">房产证号</option>
+                <option value="2">不动产权证号</option>
+                <option value="3">其他</option>
+            </select>
+        </div> <i class="am-icon-angle-right"></i>
+	    	</li>
+            <div class="fczcode"><input type="text" class="bdcode" style="width:20%">房权证<input type="text" class="bdcode" style="width:20%">字第<input type="text" class="bdcode" style="width:25%">号 </div>
+            <div class="fczcode"><input type="text" class="bdcode" style="width:15%">(<input type="text" class="bdcode" style="width:18%">)<input type="text" class="bdcode" style="width:15%">不动产第<input type="text" class="bdcode" style="width:15%">号 </div>
+            <div class="fczcode"><input type="text" class="bdcode" style="width:95%"></div>
+            <li>
+	    		<span>房产证地址</span>
+	    		<input type="text" class="add-input" placeholder="精确到门牌号，评估更准确">
+	    	</li>
+            <li style="border:0px;">
+	    		<span>抵押类型</span>
+	    		<div data-role="fieldcontain" class="demo-selects add-input">
+            <select id="city1" class="demo-test-selects" data-role="none">
+            <option value="0">请选择抵押类型</option>
+                <option value="1">一押</option>
+            </select>
+        </div> <i class="am-icon-angle-right"></i>
+	    	</li>
+            
+	    </ul>
+         <div class="clear"></div>
+        <div class="product_content">
+    <div class="boxmore"><a href="javascript:void(0);"><span>补充信息，评估更准确（选填）</span></a></div>
+    <div class="clear"></div>
+		<ul class="product_sq">
+			<li>
+	    		<span>总楼层</span>
+	    		<input type="text" class="add-input" placeholder="请输入总楼层"> 
+	    	</li>
+	    	<li>
+	    		<span>朝向</span>
+                <div data-role="fieldcontain" class="demo-select add-input">
+            <select id="city" class="demo-test-select" data-role="none">
+            <option value="0">请选择朝向</option>
+                <option value="1">东</option>
+                <option value="2">南</option>
+                <option value="3">西</option>
+                <option value="4">北</option>
+                <option value="5">东南</option>
+                <option value="6">西南</option>
+                <option value="7">东北</option>
+                <option value="8">西北</option>
+                <option value="9">南北</option>
+                <option value="10">东西</option>
+            </select>
+        </div>
+	    		<i class="am-icon-angle-right"></i>
+	    	</li>
+	    	<li style="border:0px">
+	    		<span>建成年代</span>
+	    		<input type="text" class="add-input" placeholder="请输入房屋建成年代"> 
+	    	</li>
+		</ul>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	var hdw = $('.product_content ul li');
+
+	hdw.hide();
+
+	$('.boxmore a').click(function(){
+		if (hdw.is(':visible')){
+			hdw.hide();
+			$('.boxmore a span').css('background','url(images/down.gif) no-repeat right center').text('补充信息，评估更准确（选填）');
+			$('ul li').removeClass('onebox');
+		}else{
+			hdw.show();
+			$('.boxmore a span').css('background','url(images/up.gif) no-repeat right center').text('补充信息，评估更准确（选填）');
+			
+		};
+		return false;
+	});
+
+});
+</script>
+<ul class="product_sq" style="margin-top:10px;">
+			<li style="border:0px;">
+	    		<span>返佣比例&nbsp;<img src="images/yjicon.png" width="14" id="fy_windows"></span>
+	    		<div class="list-cart1">
+	                <div class="d-stock">
+			                <a class="decrease">-</a>
+			                <input id="num" readonly class="text_box" name="" type="text" value="0.00%">
+			                <a class="increase">+</a>
+	                </div>
+                </div>
+	    	</li>
+            </ul>
+<p class="product_tips">本单建议返佣比例为<font color="#ff711c">0.00%</font>，可设置您预期的比例，范围在
+<font color="#ff711c">0.00%-0.00%</font>。根据您目前设置的比例，借款人的综合成
+本为年化<font color="#ff711c">0.00%</font>。</p>
+        <input type="button" class="confirm" value="确认提交">
+        <script src="js/LAreaData1.js"></script>
+<script src="js/LAreaData2.js"></script>
+<script src="js/LArea.js"></script>
+<script>
+var area1 = new LArea();
+area1.init({
+	'trigger': '#demo1', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+	'valueTo': '#value1', //选择完毕后id属性输出到该位置
+	'keys': {
+		id: 'id',
+		name: 'name'
+	}, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+	'type': 1, //数据源类型
+	'data': LAreaData //数据源
+});
+area1.value=[1,13,3];//控制初始位置，注意：该方法并不会影响到input的value
+var area2 = new LArea();
+area2.init({
+	'trigger': '#demo2',
+	'valueTo': '#value2',
+	'keys': {
+		id: 'value',
+		name: 'text'
+	},
+	'type': 2,
+	'data': [provs_data, citys_data, dists_data]
+});
+</script>
+<script>
+	//购物数量加减
+	$(function(){
+		$('.increase').click(function(){
+			var self = $(this);
+			var current_num = parseInt(self.siblings('input').val());
+			current_num += 1;
+			self.siblings('input').val(current_num);
+			update_item(self.siblings('input').data('item-id'));
+		})		
+		$('.decrease').click(function(){
+			var self = $(this);
+			var current_num = parseInt(self.siblings('input').val());
+			if(current_num > 1){
+				current_num -= 1;
+				self.siblings('input').val(current_num);
+				update_item(self.siblings('input').data('item-id'));
+			}
+		})
+	})
+</script>
+<!-- 弹出层部分-->
+<div class="ygydcity_layer">
+<div class="ygydcity">
+ <div class="ygydcontent">
+
+				<ul class="payment_city_mask">
+                    <li class="ygyd_title">返佣比例说明</li>
+                    <li class="ygyd_con">您的返佣比例与借款人的借款期限有关，
+            详见产品介绍页面说明</li>
+					<li class="shiyi_close">知道了</li>
+				</ul>
+				
+</div>								
+</div>
+<div class="ygydcontent_mark"></div>
+</div>				
+<script>
+$(function(){
+	$("#fy_windows").click(function () {
+		$('.ygydcity').show(0);
+		$('.ygydcontent_mark').show(0);
+	});
+	$('.shiyi_close').click(function(){
+		$('.ygydcity').hide(0);
+		$('.ygydcontent_mark').hide(0);
+	});
+});
+</script>
+<!-- 弹出层部分-->
+<div class="ygydcity_layer">
+<div class="ygydcity1">
+ <div class="ygydcontent">
+
+				<ul class="payment_city_mask1">
+                    <li class="ygyd_title">产权证类型填写说明</li>
+                    <li class="ygyd_con"><img src="images/cqimg.jpg" width="100%"></li>
+					<li class="shiyi_close">知道了</li>
+				</ul>
+				
+</div>								
+</div>
+<div class="ygydcontent_mark1"></div>
+</div>				
+<script>
+$(function(){
+	$("#cq_windows").click(function () {
+		$('.ygydcity1').show(0);
+		$('.ygydcontent_mark1').show(0);
+	});
+	$('.shiyi_close').click(function(){
+		$('.ygydcity1').hide(0);
+		$('.ygydcontent_mark1').hide(0);
+	});
+});
+</script>
+</body>
+</html>

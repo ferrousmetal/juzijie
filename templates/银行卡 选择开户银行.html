@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>阳光成单</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="stylesheet" type="text/css" href="css/global.css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/script.js"></script>
+</head>
+<body>
+  <header id="title">
+    <div class="back"> </div>
+    选择开户银行
+  </header>
+  <div style="height:40px;"></div>
+  <!--城市选择-->
+<div class="card-select">
+            <ul class="list f-cf">
+                <li class="z-active f-cf">
+                    <div class="logo"><img src="images/bank_ccb.png" alt=""><span class="name">建设银行</span></div>
+                    <div class="info">单笔限额为5万元，日累计限额50万元<br>
+                        客服热线95533</div>
+                </li>
+                <li class="f-cf"> 
+                    <div class="logo"><img src="images/bank_icbc.png" alt=""><span class="name">工商银行</span></div>
+                    <div class="info">单笔限额为5万元，日累计限额5万元<br>
+                        客服热线95588</div>
+                </li>
+                <li class="f-cf"> <i class="u-radio" data-value="abc"></i>
+                    <div class="logo"><img src="images/bank_abc.png" alt=""><span class="name">农业银行</span></div>
+                    <div class="info">单笔限额为5万元，日累计限额50万元<br>
+                        客服热线95599</div>
+                </li>
+                <li class="f-cf"> <i class="u-radio" data-value="boc"></i>
+                    <div class="logo"><img src="images/bank_boc.png" alt=""><span class="name">中国银行</span></div>
+                    <div class="info">单笔限额为5万元，日累计限额5万元<br>
+                        客服热线95566</div>
+                </li>
+                <li class="f-cf"> <i class="u-radio" data-value="psbc"></i>
+                    <div class="logo"><img src="images/bank_psbc.png" alt=""><span class="name">邮政银行</span></div>
+                    <div class="info">单笔限额为5000元，日累计限额5000元<br>
+                        客服热线95580</div>
+                </li>
+                <li class="f-cf"> <i class="u-radio" data-value="ceb"></i>
+                    <div class="logo"><img src="images/bank_ceb.png" alt=""><span class="name">光大银行</span></div>
+                    <div class="info">单笔限额为5万元，日累计限额50万元<br>
+                        客服热线95595</div>
+                </li>
+                <li class="f-cf"> <i class="u-radio" data-value="ctib"></i>
+                    <div class="logo"><img src="images/bank_ctib.png" alt=""><span class="name">中信银行</span></div>
+                    <div class="info">单笔限额为5000元，日累计限额5万元<br>
+                        客服热线95558</div>
+                </li>
+                <li class="f-cf"> <i class="u-radio" data-value="ibcn"></i>
+                    <div class="logo"><img src="images/bank_ibcn.png" alt=""><span class="name">兴业银行</span></div>
+                    <div class="info">单笔限额为5万元，日累计限额20万元<br>
+                        客服热线95561</div>
+                </li>
+				 <li class="f-cf"> <i class="u-radio" data-value="bcm"></i>
+                    <div class="logo"><img src="images/bank_bcm.png" alt=""><span class="name">交通银行</span></div>
+                    <div class="info">在银联在线支付官网开通在线支付业务后方可进行充值。单笔限额为5万元，日累计限额50万元，客服热线95559</div>
+                </li>
+                <li class="f-cf"> <i class="u-radio" data-value="pgbc"></i>
+                    <div class="logo"><img src="images/bank_pgbc.png" alt=""><span class="name">平安银行</span></div>
+                    <div class="info">在银联在线支付官网开通在线支付业务后方可进行充值。单笔限额为5000元，日累计限额5000元，客服热线4006699999</div>
+                </li>
+            </ul>
+        </div>
+ <script>
+$(function(){
+    $('#select_bank_btn').click(function(){
+        var bank_select = $('.card-select').find('.z-active').children('i').attr('data-value');
+        $("input[name='select_bank']").val(bank_select);
+        $('#bankform').submit();
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>阳光成单</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="stylesheet" type="text/css" href="css/global.css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<header id="title">
+  <div class="back"> </div>
+  计算结果 </header>
+<div style="height:40px;"></div>
+<!--计算结果-->
+<div class="pay-iphone">预计借款人成本</div>
+<ul class="product_sq" style="margin-top:10px;">
+  <li> <span>一次性费用&nbsp;<img src="images/yjicon.png" width="14" id="fy_windows"></span>
+    <input type="text" class="add-input" placeholder="1.47%">
+    <i class="am-text-right">1,500.00元</i> </li>
+  <li style="border:0px;"> <span>每月息费</span>
+    <input type="text" class="add-input" placeholder="0.93%">
+    <i class="am-text-right">1,860.00元</i> </li>
+</ul>
+<div class="pay-iphone">预计佣金</div>
+<ul class="product_sq" style="margin-top:10px;">
+  <li style="border:0px;"> <span>佣金金额</span> <i class="am-text-right">1,500.00元</i> </li>
+</ul>
+<div class="pay-iphone" style="text-align:center">以上结果仅供参考，具体根据借款人房产及征信情况约定</div>
+
+<!-- 弹出层部分-->
+<div class="ygydcity_layer">
+  <div class="ygydcity">
+    <div class="ygydcontent">
+      <ul class="payment_city_mask">
+        <li class="ygyd_con" style="padding:30px 10px;">您的返佣比例与借款人的借款期限有关，
+          详见产品介绍页面说明</li>
+        <li class="shiyi_close">知道了</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ygydcontent_mark"></div>
+</div>
+<script>
+$(function(){
+	$("#fy_windows").click(function () {
+		$('.ygydcity').show(0);
+		$('.ygydcontent_mark').show(0);
+	});
+	$('.shiyi_close').click(function(){
+		$('.ygydcity').hide(0);
+		$('.ygydcontent_mark').hide(0);
+	});
+});
+</script>
+</body>
+</html>

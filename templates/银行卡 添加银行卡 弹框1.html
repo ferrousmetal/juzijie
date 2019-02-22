@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>阳光成单</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="stylesheet" type="text/css" href="css/global.css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<header id="title">
+  <div class="back"> </div>
+  添加银行卡
+</header>
+<div style="height:40px;"></div>
+<!--提现-->
+<div class="pay-iphone">请填写本人的银行卡信息（仅支持银联储蓄卡）</div>
+
+<ul class="product_sq" style="margin-top:10px;">
+  <li> <span>持卡人姓名</span>
+    <input type="text" class="add-input" placeholder="李晓*">
+    <i class="am-icons"><img src="images/yjicon.png" width="14" id="fy_windows"></i>
+  </li>
+  <li> <span>开户银行</span>
+    <input type="text" class="add-input" placeholder="请选择银行">
+    <i class="am-rights"></i>
+  </li>
+  <li> <span>开户地区</span>
+    <input type="text" class="add-input" placeholder="请选择银行所在地">
+    <i class="am-rights"></i>
+  </li>
+  <li> <span>卡号</span>
+    <input type="text" class="add-input" placeholder="请输入银行卡号">
+  </li>
+  <li style="border:0px;"> <span>手机号</span>
+    <input type="text" class="add-input" placeholder="请输入银行预留手机号">
+    <i class="am-icons"><img src="images/yjicon.png" width="14" id="cq_windows"></i>
+  </li>
+</ul>
+<input type="button" class="confirm" value="提交">
+<!-- 弹出层部分-->
+<div class="ygydcity_layer">
+<div class="ygydcity">
+ <div class="ygydcontent">
+
+				<ul class="payment_city_mask">
+                    <li class="ygyd_con" style="padding:30px 10px;">您的返佣比例与借款人的借款期限有关，
+            详见产品介绍页面说明</li>
+					<li class="shiyi_close">知道了</li>
+				</ul>
+				
+</div>								
+</div>
+<div class="ygydcontent_mark"></div>
+</div>				
+<script>
+$(function(){
+	$("#fy_windows").click(function () {
+		$('.ygydcity').show(0);
+		$('.ygydcontent_mark').show(0);
+	});
+	$('.shiyi_close').click(function(){
+		$('.ygydcity').hide(0);
+		$('.ygydcontent_mark').hide(0);
+	});
+});
+</script>
+<!-- 弹出层部分-->
+<div class="ygydcity_layer">
+<div class="ygydcitys">
+ <div class="ygydcontent">
+
+				<ul class="payment_city_mask">
+                    <li class="ygyd_con" style="padding:30px 10px; height:100px">请填写办理银行卡时预留的手机号。
+没有预留或忘记的、停用手机号，请联系银行客服进行处理</li>
+					<li class="shiyi_close">知道了</li>
+				</ul>
+				
+</div>								
+</div>
+<div class="ygydcontent_marks"></div>
+</div>				
+<script>
+$(function(){
+	$("#cq_windows").click(function () {
+		$('.ygydcitys').show(0);
+		$('.ygydcontent_marks').show(0);
+	});
+	$('.shiyi_close').click(function(){
+		$('.ygydcitys').hide(0);
+		$('.ygydcontent_marks').hide(0);
+	});
+});
+</script>
+</body>
+</html>

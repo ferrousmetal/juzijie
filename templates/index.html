@@ -1,0 +1,108 @@
+﻿{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>橘子借</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link href="{% static 'css/amazeui.min.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
+    <script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+    <script src="{% static 'js/time.js' %}"></script>
+    <script>
+        $(function () {
+            var elm = $('#shortbar');
+            var startPos = $(elm).offset().top;
+            $.event.add(window, "scroll", function () {
+                var p = $(window).scrollTop();
+                if (p > startPos) {
+                    elm.addClass('sortbar-fixed');
+                } else {
+                    elm.removeClass('sortbar-fixed');
+                }
+            });
+        });
+
+    </script>
+</head>
+<body>
+<!--图片轮换-->
+<div class="am-slider am-slider-default" data-am-flexslider id="demo-slider-0" style="position: relative;">
+    <header data-am-widget="header" class="am-header am-header-default tm-head" id="shortbar">
+    </header>
+    <ul class="am-slides">
+        <li><img src="{% static 'images/bannerhh.jpg' %}"/></li>
+    </ul>
+</div>
+<ul class="i_m clearfix">
+    <li class="i_m3" style="padding-right: 10px;">
+        <a href="/jietiao/">
+            <img src="{% static 'images/pic3.png' %}" alt="">
+            <h2>极速借条</h2>
+        </a>
+    </li>
+    <li class="i_m4" style="margin-right: 0px;">
+        <a href="订单.html">
+            <img src="{% static 'images/pic4.png' %}" alt="">
+            <h2>期待更多功能</h2>
+        </a>
+    </li>
+</ul>
+<ul class="ab_list">
+    <li>
+        <div class="ab_l"><i class="icon pj"></i></div>
+        <div class="ab_r">
+            <h3>绝不翘单</h3>
+            <p class="gray3 f12">每一单安心购有质量保证！</p>
+        </div>
+    </li>
+    <li>
+        <div class="ab_l"><i class="icon za"></i></div>
+        <div class="ab_r">
+            <h3>极速反馈</h3>
+            <p class="gray3 f12">无需等待，马上反馈！</p>
+        </div>
+    </li>
+    <li>
+        <div class="ab_l"><i class="icon yc"></i></div>
+        <div class="ab_r">
+            <h3>超高返佣</h3>
+            <p class="gray3 f12">返佣极高，让你的付出更有价值！</p>
+        </div>
+    </li>
+</ul>
+<div style="height:5.3rem;"></div>
+
+<ul class="quanbu-ul1">
+    <li class="current">
+        <div class="qu-tu1">
+            <a href="index.html" class="atu1"><img src="{% static 'images/sjsc-02.png' %}"></a>
+            <a href="index.html" class="atu2"><img src="{% static 'images/sjsc-15-1.png' %}"></a>
+        </div>
+        <a href="index.html" class="qu-ul1a">首页</a>
+    </li>
+    <li>
+        <div class="qu-tu1">
+            <a href="订单.html" class="atu1"><img src="{% static 'images/sjsc-17.png' %}"></a>
+            <a href="订单.html" class="atu2"><img src="{% static 'images/sjsc-17-1.png' %}"></a>
+        </div>
+        <a href="订单.html" class="qu-ul1a">订单</a>
+    </li>
+    <li>
+        <div class="qu-tu1">
+            <a href="个人中心.html" class="atu1"><img src="{% static 'images/sjsc-18.png' %}"></a>
+            <a href="个人中心.html" class="atu2"><img src="{% static 'images/sjsc18-1.png' %}"></a>
+        </div>
+        <a href="个人中心.html" class="qu-ul1a">我的</a>
+    </li>
+    <div style="clear:both;"></div>
+</ul>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/amazeui.min.js' %}"></script>
+</body>
+</html>
